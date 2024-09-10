@@ -1,0 +1,1 @@
+# Edge-Node-AI-Embedded-surveillance-security-system
