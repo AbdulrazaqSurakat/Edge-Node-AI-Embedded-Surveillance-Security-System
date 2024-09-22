@@ -1,1 +1,42 @@
+I was able to download and install opencv globally using these instructions.
+Here’s a step-by-step guide for installing OpenCV on your Raspberry Pi, specifically for Python usage (though it also includes C++ bindings). This method compiles OpenCV from source, ensuring you get the latest version with all features.
+Step 1: Update the Raspberry Pi: sudo apt-get update
+sudo apt-get upgrade
+
+Step 2: Install Dependencies: sudo apt-get install build-essential cmake git pkg-config libjpeg-dev libtiff-dev libpng-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt-get install libxvidcore-dev libx264-dev libgtk-3-dev
+sudo apt-get install libatlas-base-dev gfortran python3-dev
+sudo apt-get install python3-pip
+
+Step 3: Install Python Packages:sudo pip3 install numpy
+
+Step 4: Download OpenCV and OpenCV Contrib: 
+cd ~git clone https://github.com/opencv/opencv.git
+
+Create a build directory: 
+cd ~/opencv
+mkdir build
+cd build
+
+Run cmake to configure the build: cmake -D CMAKE_BUILD_TYPE=RELEASE \
+  	-D CMAKE_INSTALL_PREFIX=/usr/local \
+  	-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+  	-D ENABLE_NEON=ON \
+  	-D ENABLE_VFPV3=ON \
+  	-D WITH_TBB=ON \
+  	-D BUILD_TIFF=ON \
+  	-D WITH_FFMPEG=ON \
+  	-D WITH_GSTREAMER=ON \
+  	-D WITH_V4L=ON \
+  	-D WITH_LIBV4L=ON \
+  	-D OPENCV_ENABLE_NONFREE=ON \
+  	-D INSTALL_PYTHON_EXAMPLES=ON \
+  	-D BUILD_EXAMPLES=ON ..
+8)Start the build process (this may take 1-2 hours depending on your Raspberry Pi model):make -j$(nproc)
+
+8) Install OpenCV:sudo make install
+sudo ldconfig
+
+9) Step 6: Verify the Installation: python3
 
