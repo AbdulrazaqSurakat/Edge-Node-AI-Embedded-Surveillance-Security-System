@@ -1,1 +1,13 @@
+You're encountering an issue with installing the tflite-runtime package due to your Python environment being managed by your OS. Here’s how you can resolve it:
+Create a Virtual Environment: This is the recommended approach to avoid conflicts with system packages. You can create a virtual environment and then install the package within that environment: # Install python3-venv if you haven't already
+sudo apt-get install python3-venv
+# Create a new virtual environment
+python3 -m venv myenv
+
+# Activate the virtual environment:
+source myenv/bin/activate
+
+Install tflite-runtime: Now that you’re in the virtual environment, you can install tflite-runtime without issues: pip install tflite-runtime
+
+Deactivate the Virtual Environment: Once you're done, you can deactivate the virtual environment:deactivate
 
