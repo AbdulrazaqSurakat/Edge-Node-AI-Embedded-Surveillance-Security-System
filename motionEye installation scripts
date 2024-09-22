@@ -1,4 +1,9 @@
-Use a Virtual Environment
+I tried using this command: sudo apt-get update sudo apt-get install python3-pip python3-dev libssl-dev libcurl4-openssl-dev libjpeg-dev 
+libz-dev sudo pip3 install motioneye, but I got stuck with this error trying to install  motionEye, here is the chat gpt description
+(externally-managed-environment, occurs because newer versions of Debian (including the version used in Raspberry Pi OS) have stricter 
+management of system-wide Python installations. It prevents pip from installing system-wide packages to avoid breaking the system's Python 
+setup.)To install motionEye, i had to setup and use a Use a Virtual Environment
+STEPS:
 Install Virtual Environment: First, make sure the python3-venv package is installed:: sudo apt-get install python3-venv
 
 python3 -m venv ~/motioneye-venv: python3 -m venv ~/motioneye-venv
