@@ -1,1 +1,8 @@
+Use a Virtual Environment
+Install Virtual Environment: First, make sure the python3-venv package is installed:: sudo apt-get install python3-venv
 
+python3 -m venv ~/motioneye-venv: python3 -m venv ~/motioneye-venv
+
+Activate the Virtual Environment: Once the virtual environment is created, activate it: source ~/motioneye-venv/bin/activate
+
+Install MotionEye Inside the Virtual Environment: Now that the virtual environment is active, you can safely install MotionEye:pip install motioneye
